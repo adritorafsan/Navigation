@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(0, 0, 0);
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.menu{
+    color: white;
+    cursor: pointer;
+   
+}
+
+.menu ion-icon{
+    height: 60px;
+    width: 50px;
+}
+
+nav{
+    background: white;
+    height: 60px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 400px;
+    margin-left: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+
+   
+}
+
+nav.active{
+    opacity: 1;
+    animation: animate 2s forwards 1;
+
+}
+
+@keyframes animate {
+    0%{
+        width: 0px;
+        height: 0;
+    }
+    100%{
+        width: 400px;
+        height: 60px;
+        transition: width .4s;
+    }
+}
+
+
+
+nav::before{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 17.5px solid transparent;
+    border-right: 35px solid white;
+    border-bottom: 17.5px solid transparent;
+    left: 775px;
+    z-index: -1;
+}
+
+
+
+nav a{
+    margin-right: 25px;
+    margin-left: 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    position: relative;
+}
+
+nav a::before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: black;
+    top: 27px;
+    border-radius: 300px;
+    transform: translateY(20px);
+    transition: transform .8s;
+   
+}
+
+
+
+
+nav a:hover::before{
+    transform: translateY(0px);
+    transition: transform .8s;
+}
+
+
+#close{
+    position: absolute;
+    background: black;
+    top: 420px;
+    left: 1160px;
+    height: 30px;
+    width: 43px;
+    color: white;
+    border-top-left-radius: 40px;
+    
+    border-bottom-left-radius: 40px;
+    cursor: pointer;
+    
+}
+
